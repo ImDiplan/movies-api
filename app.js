@@ -91,7 +91,8 @@ app.get('/movie/delete/:id', cors(), (req, res, next) => {
     });
   });
 
-app.listen(4040, () => {
+const port = process.env.port || 4040 
+app.listen(port, () => {
     console.log('Listening in port 4040');
 })
   
