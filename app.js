@@ -30,6 +30,16 @@ app.get('/', cors(), (req, res, next) => {
       res.send(movies)
     });
   });
+
+  app.get('/movie/:id', (req, res, next) => {
+    Movie.findById(req.params.id, (err, movie)=>{
+      if (err) throw err
+      console.log(movie)
+      res.send(movie)
+    });
+    
+  });
+
 app.get('/login/', (req, res, next) =>{
     const username = req.query.username;
     const password = req.query.password;
@@ -52,9 +62,13 @@ app.post('/movie/new/', cors(), (req, res, next) => {
         overview:req.body.overview,
         poster:req.body.poster,
         video:req.body.video,
+        actors: req.body.actors,
+        director: req.body.director,
+        rate: req.body.rate,
+        year: req.body.year
     })
     movie.save()
-    res.send("Saved!!")
+    res.send(movie)
   });
   
 app.post('/movie/update/:id', cors(), (req, res, next) => {
@@ -64,7 +78,7 @@ app.post('/movie/update/:id', cors(), (req, res, next) => {
         if (err) throw err;
       });
     //console.log(movie);
-    res.send("updated!!!");
+    res.redirect("/");
   });
   
 app.get('/movie/delete/:id', cors(), (req, res, next) => {

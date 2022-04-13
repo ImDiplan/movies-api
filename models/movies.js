@@ -7,6 +7,10 @@ let movieSchema = new Schema({
     overview: {type: String},
     poster: {type: String},
     video: {type: String},
+    actors: {type: String},
+    director: {type: String},
+    rate: {type: String},
+    year: {type: String}
 
 }, {versionKey: false} )
 
