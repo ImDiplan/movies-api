@@ -65,7 +65,8 @@ app.post('/movie/new/', cors(), (req, res, next) => {
         actors: req.body.actors,
         director: req.body.director,
         rate: req.body.rate,
-        year: req.body.year
+        year: req.body.year,
+        backdrop_path: req.body.backdrop_path
     })
     movie.save()
     res.send(movie)

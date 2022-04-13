@@ -10,7 +10,8 @@ let movieSchema = new Schema({
     actors: {type: String},
     director: {type: String},
     rate: {type: String},
-    year: {type: String}
+    year: {type: String},
+    backdrop_path: {type: String}
 
 }, {versionKey: false} )
 
