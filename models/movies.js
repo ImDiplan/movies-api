@@ -13,7 +13,7 @@ let movieSchema = new Schema({
     year: {type: String},
     backdrop_path: {type: String}
 
-}, {versionKey: false} )
+}, {versionKey: false} );
 
 let Movie = mongoose.model('movies', movieSchema);
 module.exports = Movie;
