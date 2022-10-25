@@ -23,7 +23,7 @@ app.use(
         limit:'20mb',
         extended: true,
     })
-)
+);
 app.get('/', cors(), (req, res, next) => {
     Movie.find((err, movies) => {
       console.log(movies);
